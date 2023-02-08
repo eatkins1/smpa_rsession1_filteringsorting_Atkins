@@ -48,9 +48,8 @@ impeach
 
 ```{r}
 
-
-
-
+impeach %>%
+  filter(for_impeachment == "NO")
 
 
 ```
@@ -59,7 +58,9 @@ impeach
 
 ```{r}
 
-
+impeach %>%
+  filter(for_impeachment == "NO",
+         p16winningparty == "R")
 
 
 
@@ -69,7 +70,10 @@ impeach
 
 ```{r}
 
-
+impeach %>%
+  filter(for_impeachment == "NO",
+         p16winningparty == "R",
+         p12winningparty == "R")
 
 
 
@@ -79,7 +83,10 @@ impeach
 
 ```{r}
 
-
+impeach %>%
+  filter(for_impeachment == "YES",
+         date_month == 9,
+         date_year == 2019)
 
 
 
@@ -89,7 +96,9 @@ impeach
 
 ```{r}
 
-
+impeach %>%
+  filter(for_impeachment == "YES",
+         clinton_percent >= 70)
 
 
 
@@ -100,8 +109,8 @@ bachelor's degree or higher ("pct_bachelors"), from lowest to highest.
 
 ```{r}
 
-
-
+impeach %>%
+arrange(pct_bachelors)
 
 
 

@@ -52,7 +52,7 @@ We can also return just the few rows using `head()`.
 
 ```{r}
 
-head(flightdata)
+head(flightdata, 10)
 
 ```
 
@@ -274,7 +274,7 @@ Set the stock ticker as an object and the start and end dates for the data that 
 
 ```{r}
 
-ticker <- "MSFT"  
+ticker <- "XOM"  
 
 ```
 
@@ -375,7 +375,8 @@ gasprices_weekly
 
 ```{r}
 
-
+gasprices_weekly %>% 
+  filter(price == max(price))
 
 
 ```
@@ -384,7 +385,8 @@ gasprices_weekly
 
 ```{r}
 
-
+gasprices_weekly %>% 
+  filter(price == min(price))
 
 
 ```
@@ -393,7 +395,11 @@ gasprices_weekly
 
 ```{r}
 
+aug_onward <- gasprices_weekly%>% 
+  filter(date >= "2022-08-01")
 
+aug_onward %>%
+    filter(price == max(price))
 
 
 ```
